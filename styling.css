@@ -1,4 +1,6 @@
 body,h1,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+p {font-family: "Inconsolata", sans-serif;}
+
 body, html {
     height: 100%;
     color: #777;
@@ -57,7 +59,7 @@ body, html {
 /* Create a Parallax Effect */
 .bgimg-1,
 .bgimg-2 {
-  opacity: 0.95;
+  opacity: 1.0;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -66,8 +68,9 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url(images/header.jpg);
+  background-image: url(images/header3.jpg);
   min-height: 100%;
+  
 }
 
 /* Second image (Portfolio) */
@@ -275,7 +278,7 @@ div.fill ul li a:after {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #aaa;
+  background: black;
   height: 1px;
 }
 div.stroke ul li a:hover:after {
@@ -321,8 +324,3 @@ div ul {
         border-width: 1px;
     }
 }
-
-
-
-
-
