@@ -23,6 +23,13 @@ body, html {
   transform: translate(-50%, -50%) }
 }
 
+.subtitle{
+  font-family:'Italianno', cursive;
+  font-size: 150%;
+  text-align: center;
+  padding-top: 1%;
+}
+
 .centerImage {
   display: block;
   margin-left: auto;
