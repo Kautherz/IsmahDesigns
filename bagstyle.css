@@ -1,0 +1,107 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
+@import "compass/reset";
+$fontSans : 'Montserrat', sans-serif;
+$fontSerif : 'Droid Serif', serif;
+
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+*{ box-sizing:border-box;}
+
+
+
+body {
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  font-family: $fontSerif;
+ 
+}
+ img {
+   max-width:100%;
+ }
+.cf:before,.cf:after {content: " ";display: table;}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+
+.wrap {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5% 0;
+  margin-bottom: 5em;
+  
+}
+.projTitle {
+   font-family: $fontSans;
+    font-weight: bold;
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 0;
+  border-bottom: 1px solid #dadada;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  span {
+    font-family: $fontSerif;
+    font-weight: normal;
+    font-style: italic;
+     text-transform: lowercase;
+    color: #777;
+    
+  }
+}
+// CART HEADER
+.heading {
+  padding: 1em 0;
+  border-bottom: 1px solid #D0D0D0;
+ 
+  h1 {
+   font-family: $fontSerif;
+   font-size: 2em;
+   float: left;
+  }
+  a.continue {
+    &:link , &:visited {
+      text-decoration: none;
+      font-family: $fontSans;
+      letter-spacing: -.015em;
+      font-size: .75em;
+      padding: 1em;
+      color: #fff;
+      background: #82ca9c;
+      font-weight: bold;
+      border-radius: 50px;
+    float: right;
+      text-align: right;
+       @include transition(all, .25s, linear);
+    }
+    &:after {
+      content: "\276f";
+      padding: .5em;
+      position: relative;
+      right:0;
+       @include transition(all, .15s, linear);
+      
+    }
+    &:hover , &:focus, &:active {
+      background: #f69679;
+      
+      &:after {
+        right: -10px;
+      }
+    }
+  }
+}
+
+a.btn.continue {
+  width: 100%;
+  text-align: center;
+}
+
