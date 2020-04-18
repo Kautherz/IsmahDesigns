@@ -380,6 +380,21 @@ img {vertical-align: middle;}
   top: 0;
 }
 
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
 
 /* Fading animation */
 .fade {
@@ -571,4 +586,41 @@ body {
     .product-grid2 {
         margin-bottom: 30px;
    }
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  list-style: none;
+}
+.breadcrumb-list li {
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '/';
+  display: inline-block;
+  padding: 0 0.5rem;
+  color: #aaa;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+#active_breadcrumb {
+  color: grey;
+}
+
+#bc{
+  color: #aaa;
 }

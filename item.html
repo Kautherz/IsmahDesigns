@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Ismah Designs</title>
-        
+
         <link href='styling.css' rel="stylesheet" type = "text/css">
-        <link href='grid.css' rel="stylesheet" type = "text/css">
+        <link href='slidestyle.css' rel="stylesheet" type = "text/css">
         <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
     
         </style>
     </head>
-    
+    <body>
 
       <div id="section-home">
         <nav id = "myNavbar" class = 'navbar fixed-top navbar-expand-lg navbar-light bg-light'>
@@ -59,7 +59,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="#section-about">About Us</a>
+                        <a class="nav-link text-black" href="#section-collections">Our Collections</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -118,155 +118,106 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class = 'nav-link text-black' href="#">Bag <i class="fas fa-shopping-bag"></i> 
+                        <a class = 'nav-link text-black' href="#section-home">Bag <i class="fas fa-shopping-bag"></i> 
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">About Us</a>
                     </li>
                     <li>
                         <a class = 'nav-link text-black' href="#section-contact">Contact Us </a> 
                     </li>
+
                 </ul>
+             
             </div>
         </nav>
        </div>
 
-       <!-- Start of body -->
-       <body>
        <div class="container">
+        <div class="grid second-nav">
+          <div class="column-xs-12">
+            <nav>
+              <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html" id="bc">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" id="bc">Men</a></li>
+                <li class="breadcrumb-item"><a href="#" id="bc">Crewnecks</a></li>
+                <li class="breadcrumb-item", id="active_breadcrumb">Arbaeen Crewneck</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class='navbar-toggler-icon'></span>
+        </button>
+        </nav>
+       <div class="w3-content w3-container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                    <div class="product-image2">
-                        <a href="#">
-                            <img class="pic-1" src="images/muharram_4front.png">
-                            <img class="pic-2" src="images/muharram_4back.png">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Hussain the Rightly Guided Sweatshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="product-grid2" style="padding-top: 5%; padding-left: 10%;"> 
+                    <div class="slideshow-container">
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                          <img src="images/arbaeen_design1.png" style="width:100%">
+                        </div>
+                      
+                        <div class="mySlides fade">
+                          <img src="images/arbaeen_design2.png" style="width:100%">
+                        </div>
+                      
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      </div>
+                      <br>
+                      
+                      <!-- The dots/circles -->
+                      <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                      </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="product-grid2", style="padding-top: 5%; padding-left: 10%;">
+                    <h1>Arbaeen Crewneck Sweatshirt</h1>
+                    <h1>$99.99</h1>
+                    <hr>
+                    <label for="quantity">Quantity:</label>
+                    <select id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    </select>
+
+                    <label for="quantity">Size:</label>
+                    <select id="quantity">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    </select>
+                    <a href="#"><button type="button" class="btn btn-light";>Add to Bag</button></a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="#">
-                        <img class="pic-1" src="images/muharram_5front.png">
-                        <img class="pic-2" src="images/muharram_5back.png">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Hussain the Rightly Guided Tshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="#">
-                        <img class="pic-1" src="images/muharram_6front.png">
-                        <img class="pic-2" src="images/muharram_6back.png">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Ya Hussain Crewneck Sweatshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="item.html">
-                        <img class="pic-1" src="images/arbaeen_design1.png">
-                        <img class="pic-2" src="images/arbaeen_design2.png">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Arbaeen Crewneck</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <hr>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                    <div class="product-image2">
-                        <a href="#">
-                            <img class="pic-1" src="images/muharram_4front.png">
-                            <img class="pic-2" src="images/muharram_4back.png">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Hussain the Rightly Guided Sweatshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="#">
-                        <img class="pic-1" src="images/muharram_5front.png">
-                        <img class="pic-2" src="images/muharram_5back.png">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Hussain the Rightly Guided Tshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="#">
-                        <img class="pic-1" src="images/muharram_6front.png">
-                        <img class="pic-2" src="images/muharram_6back.png">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Ya Hussain Crewneck Sweatshirt</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid2">
-                  <div class="product-image2">
-                      <a href="#">
-                        <img class="pic-1" src="images/hat1.jpg">
-                        <img class="pic-2" src="images/hat2.jpg">
-                      </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Propeller Hat</a></h3>
-                        <span class="price">$99.99</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <hr>
-
-    <footer class="bg-dark">
-        <div class="container">
-            <p class="text-center" style="color:#FFFFFF;">Copyright &copy; 2020 Kauther Zeini and Ali Zaini</p>
-        </div>
-    </footer>
-
-    
+    <hr> 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="scrollhelper.js" type="text/javascript"></script>
     <script src="helper.js" type="text/javascript"></script> 
+    <script src="slides.js" type="text/javascript"></script> 
     <script>
         $(function () {
             $('#main_navbar').bootnavbar({
