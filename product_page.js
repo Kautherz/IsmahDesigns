@@ -16,8 +16,8 @@ const renderProductPage = async function(){
         }
         document.getElementById("breadcrumb-list").innerHTML = `<ol class="breadcrumb-list" id= "breadcrumb-list">
         <li class="breadcrumb-item bc"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item bc"><a href="shop.html/products?gender=${product_data.gender}" id="product-gender">${product_data.gender}</a></li>
-        <li class="breadcrumb-item bc"><a href="shop.html/products?gender=${product_data.gender}&type=${typeString}" id="product-type">${product_data.type}</a></li>
+        <li class="breadcrumb-item bc"><a href="shop.html?gender=${product_data.gender}" id="product-gender">${product_data.gender}</a></li>
+        <li class="breadcrumb-item bc"><a href="shop.html?gender=${product_data.gender}&type=${typeString}" id="product-type">${product_data.type}</a></li>
         <li class="breadcrumb-item active_breadcrumb", id="product-title">${product_data.name}</li>
       </ol>`;
     }
