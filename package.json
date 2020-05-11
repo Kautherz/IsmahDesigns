@@ -1,0 +1,14 @@
+{
+    "name": "ismah_designs_api",
+    "version": "1.0.0",
+    "description": "Backend API for Ismah Designs",
+    "author": "Kauther Zeini and Ali Zaini",
+    "main": "app.js",
+    "scripts": {
+        "start": "npm install && node app"
+    },
+    "dependencies": {
+        "express": "*",
+        "shortid": "*"
+    }
+}
