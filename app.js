@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 const routes = require('./routes/game.routes');
-app.get("", index);
+// app.get("", index);
 app.use(localHostHandler);
 app.use('/', routes);
 app.use(bodyParser.json());
@@ -19,6 +19,6 @@ function localHostHandler(request, response, next){
     next();
 }
 
-function index(request, response){
-    response.sendFile('contact.html', {root: _dirname});
-}
+// function index(request, response){
+//     response.sendFile('contact.html', {root: _dirname});
+// }
