@@ -1,33 +1,17 @@
-const renderProducts = /*aysnc*/ function(){
+const renderProducts = async function(){
     const urlparams = new URLSearchParams(window.location.search);
-    const product_id = urlparams.get("product_id");
-    //const product_data = await fetch("localhost:3000/get_product?product_id=5ea8b5645c670f58d49f139d")
-    // var products = [{id: "123456", name: "Item 1", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/arbaeen_design2.png", "images/arbaeen_design1.png"], price: "$9999.99"},
-    //             {id: "777777", name: "Item 2", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "333333", name: "Item 3", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"},
-    //             {id: "444444", name: "Item 4", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "999999", name: "Item 5", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"},
-    //             {id: "101010", name: "Item 6", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "342343", name: "Item 7", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"},
-    //             {id: "686532", name: "Item 8", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "121002", name: "Item 9", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"},
-    //             {id: "111111", name: "Item 10", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "122222", name: "Item 11", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"},
-    //             {id: "143534", name: "Item 12", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$99.99"},
-    //             {id: "134323", name: "Item 13", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$10.99"}];
-    var products = {"123456": {name: "Item 1", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/arbaeen_design2.png", "images/arbaeen_design1.png"], price: "$9999.99"},
-    "777777": {name: "Item 2", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "333333": {name: "Item 3", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"},
-    "444444": {name: "Item 4", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "999999": {name: "Item 5", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"},
-    "101010": {name: "Item 6", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "342343": {name: "Item 7", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"},
-    "686532": {name: "Item 8", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "121002": {name: "Item 9", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"},
-    "111111": {name: "Item 10", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "122222": {name: "Item 11", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"},
-    "143534": {name: "Item 12", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: "$9999.99"},
-    "134323": {name: "Item 13", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: "$9999.99"}};
+    const gender = urlparams.get("gender");
+    const type = urlparams.get("type");
+    var link = "";
+    if(type){
+        link = `http://localhost:3000/products?gender=${gender}&type=${type}`;
+    }
+    else{
+        link = `http://localhost:3000/products?gender=${gender}`;
+    }
+    const response = await fetch(link);
+    const products = await response.json();
+
     num_products = Object.keys(products).length;
 
     var rows = 0
@@ -44,7 +28,6 @@ const renderProducts = /*aysnc*/ function(){
     var row_string = "";
     var keys = Object.keys(products);
     var item = 0
-    console.log(keys)
     while(rows > 0){
         row_string += `<div class="container">
         <div class="row">`
@@ -64,7 +47,6 @@ const renderProducts = /*aysnc*/ function(){
                 </div>
             </div>
         </div>`
-            console.log(keys[item])
             item++;
             i++;
         }
