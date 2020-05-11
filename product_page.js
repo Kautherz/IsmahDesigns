@@ -7,10 +7,17 @@ const renderProductPage = async function(){
         document.getElementById("product-name").innerHTML = product_data.name;
         document.getElementById("product-pic1").src = product_data.pictures[0];
         document.getElementById("product-pic2").src = product_data.pictures[1];
+        var typeString = "";
+        if(product_data.type == "Hoodies and Sweatshirts"){
+            typeString = "Hoodies%20and%20Sweatshirts";
+        }
+        else{
+            typeString = product_data.type;
+        }
         document.getElementById("breadcrumb-list").innerHTML = `<ol class="breadcrumb-list" id= "breadcrumb-list">
         <li class="breadcrumb-item bc"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item bc"><a href="shop.html/products?gender=${product_data.gender}" id="product-gender">${product_data.gender}</a></li>
-        <li class="breadcrumb-item bc"><a href="shop.html/products?gender=${product_data.gender}&type=${product_data.type}" id="product-type">${product_data.type}</a></li>
+        <li class="breadcrumb-item bc"><a href="shop.html/products?gender=${product_data.gender}&type=${typeString}" id="product-type">${product_data.type}</a></li>
         <li class="breadcrumb-item active_breadcrumb", id="product-title">${product_data.name}</li>
       </ol>`;
     }
