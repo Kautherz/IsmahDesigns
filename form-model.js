@@ -4,7 +4,7 @@ const entry2 = "entry.373802943" //email
 const entry3 = "entry.860133815" //subject
 const entry4 = "entry.992873772" //message
 
-const getPath = formId => `http://docs.google.com/forms/d/e/${formId}/formResponse`;
+const getPath = formId => `https://docs.google.com/forms/d/e/${formId}/formResponse`;
 
 const postToGoogleDb = function(data){
     const path = getPath(formId);
