@@ -4,10 +4,10 @@ const renderProducts = async function(){
     const type = urlparams.get("type");
     var link = "";
     if(type){
-        link = `http://localhost:3000/products?gender=${gender}&type=${type}`;
+        link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}&type=${type}`;
     }
     else{
-        link = `http://localhost:3000/products?gender=${gender}`;
+        link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}`;
     }
     const response = await fetch(link);
     const products = await response.json();
