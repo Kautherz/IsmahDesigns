@@ -7,6 +7,7 @@ const renderProductPage = async function(){
         document.getElementById("product-name").innerHTML = product_data.name;
         document.getElementById("product-pic1").src = product_data.pictures[0];
         document.getElementById("product-pic2").src = product_data.pictures[1];
+        document.getElementById("product-price").innerHTML = "$" + product_data.price;
         var typeString = "";
         if(product_data.type == "Hoodies and Sweatshirts"){
             typeString = "Hoodies%20and%20Sweatshirts";
