@@ -43,7 +43,7 @@ const renderProducts = async function(){
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="item.html?product_id=${keys[item]}">${products[keys[item]].name}</a></h3>
-                    <span class="price">${products[keys[item]].price}</span>
+                    <span class="price">$${products[keys[item]].price}</span>
                 </div>
             </div>
         </div>`
