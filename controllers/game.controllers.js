@@ -1,4 +1,4 @@
-const game = require('../models/game.model');
+const game = require('../models/inventory');
 class Controllers{
     getProduct(request, response){
         const {productID} = request.query;
