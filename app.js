@@ -12,7 +12,7 @@ function setupApp(){
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:false}));
 
-    app.use(session({secret: 'secret-word', resave: false, saveUninitialized: true, cookie: { secure: false, httpOnly: false }}))
+    //app.use(session({secret: 'secret-word', resave: false, saveUninitialized: true, cookie: { secure: false, httpOnly: false }}))
 
    // var sess = {
     //	secret: 'secret-word',
@@ -28,8 +28,8 @@ function setupApp(){
 
     //app.use(session({cookie: {secure: false}})); 
 
-    //const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true };
-    //app.use(session(sessionConfig) );
+    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true };
+    app.use(session(sessionConfig) );
     app.use('/', routes);  
 }
 
