@@ -8,6 +8,10 @@
         "start": "npm install && node app"
     },
     "dependencies": {
-        "express": "*"
+        "express": "*",
+        "shortid": "*",
+        "express-session": "*",
+        "express-flash": "*",
+        "cors": "*"
     }
 }
