@@ -4,12 +4,14 @@ const renderProducts = async function(){
     const type = urlparams.get("type");
     var link = "";
     if(type){
-        link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}&type=${type}`;
+        //link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}&type=${type}`;
+        link = `http://localhost:3000/products?gender=${gender}&type=${type}`;
     }
     else{
-        link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}`;
+        //link = `https://rocky-refuge-39209.herokuapp.com/products?gender=${gender}`;
+        link = `http://localhost:3000/products?gender=${gender}`;
     }
-    const response = await fetch(link);
+    const response = await fetch(link, /*{mode: "no-cors"}*/);
     const products = await response.json();
 
     num_products = Object.keys(products).length;

@@ -92,7 +92,7 @@
                     <h1 id="product-price">$99.99</h1>
                     <hr>
                     <label for="quantity">Quantity:</label>
-                    <select id="quantity">
+                    <select id="quantity" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -106,12 +106,12 @@
                     </select>
 
                     <label for="quantity">Size:</label>
-                    <select id="quantity">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    </select>
-                    <a href="#"><button type="button" class="btn btn-light";>Add to Bag</button></a>
+                      <select id="size" name="drop" class="form-control">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                      </select>
+                      <button id= "submit" class="btn btn-xl btn-outline-dark text">Add to Bag</button>
                 </div>
             </div>
     </div>
@@ -123,8 +123,10 @@
     <script src="scrollhelper.js" type="text/javascript"></script>
     <script src="helper.js" type="text/javascript"></script> 
     <script src="item_slides.js" type="text/javascript"></script> 
+    <script src="item-controller.js" type="text/javascript"></script>
     <script src="product_page.js" type="text/javascript"></script>
-    <script src="navbar.js" type="text/javascript"></script>  
+    <script src="navbar.js" type="text/javascript"></script> 
+    <!-- <script src="bag_items.js" type="text/javascript"></script>   -->
     <script>
         $(function () {
             $('#main_navbar').bootnavbar({
