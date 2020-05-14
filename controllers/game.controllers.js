@@ -17,14 +17,9 @@ class Controllers{
     }
 
     addBag(request, response){
-       // console.log(request.session.id);
-        //console.log(request.body.productIDs);
-    
         const sessionID = request.session.id;
-        const {products} = request.body;
-        const bag = userBags.add(sessionID, products);
-        console.log(sessionID, bag);
-
+        const {productID, size, quantity} = request.body;
+        const bag = userBags.add(sessionID, productID, size, quantity);
 
         if (bag){
             //userBags[sessionID].push(productIDs); 
@@ -36,19 +31,14 @@ class Controllers{
     }
 
     getBag(request, response){
-        //console.log(request.session.id);
-        //response.json({success:true})
-        
         const sessionID = request.session.id;
-
         const bag = userBags.get(sessionID);
-        console.log(sessionID, bag);
 
         if(bag){
-            response.json({'success': true, 'bag': bag });
+            response.json(bag);
         }
         else{
-             response.json({"success": false})
+             response.json({'success': false})
 
         }
     }
@@ -67,10 +57,35 @@ class Controllers{
         else{
            response.json({'success': false});
         }
-
-
     }
     
+    getGender(request, response){
+        const {gender} = request.query;
+        const {type} = request.query;
+        var data = {};
+        data = inventory.getGenderDictionary(gender, type);
+        const num_data = Object.keys(data).length;
+        if(num_data == 0){
+            response.json({"success": false});
+        }
+        else{
+            response.json(data);
+        }
+    }
+
+    deleteProduct(request, response){
+        const sessionID = request.session.id;
+        const uniqueID = request.body.data;
+        const bag = userBags.delete(sessionID, uniqueID);
+
+        if (bag){
+            //userBags[sessionID].push(productIDs); 
+            response.json({'success': true, 'bag': bag });
+        }
+        else{
+           response.json({'success': false});
+        }
+    }
 }
 
 module.exports = new Controllers();
