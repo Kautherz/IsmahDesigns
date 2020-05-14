@@ -1,4 +1,3 @@
-
 class Bag {
     constructor(){
         
@@ -17,14 +16,14 @@ class Bag {
         }
     }
 
-    add(id, items){
-        if(!this.userBags[id]){
-            this.userBags[id] = [];  
+    add(sessionID, productID, size, quantity){
+        const bagID = productID + '-' + size;
+        if (!this.userBags[sessionID]){
+            this.userBags[sessionID] = {};
         }
-        const bag = this.userBags[id];
-        for (let item of items){
-             bag.push(item);
-        }
+        const bag = this.userBags[sessionID];
+        bag[bagID] = quantity;
+        // this.userBags[sessionID][bagID] = quantity;
         return bag;
 
     }
@@ -40,7 +39,15 @@ class Bag {
         }
     }
 
-
+    delete(sessionID, uniqueID){
+        if (!this.userBags[sessionID]){
+            this.userBags[sessionID] = {};
+        }
+        delete this.userBags[sessionID].uniqueID;
+        var bag = this.userBags[sessionID];
+        delete bag[uniqueID];
+        return bag;
+    }   
 }
 
 module.exports = new Bag();
