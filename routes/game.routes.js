@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const {setBag, getProduct, getBag, addBag} = require('../controllers/game.controllers');
+const {getGender, setBag, getProduct, getBag, addBag, deleteProduct} = require('../controllers/game.controllers');
 
 
+router.get('/products', getGender);
+router.post('/addProduct', addBag);
 router.get('/product', getProduct);
-router.post('/addBag', addBag);
+router.post('/deleteProduct', deleteProduct);
 router.get('/getBag', getBag);
 router.post('/setBag', setBag);
 
