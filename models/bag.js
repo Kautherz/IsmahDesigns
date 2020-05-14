@@ -12,7 +12,9 @@ class Bag {
             return bag;
         }
         else{
-            return null;
+            this.userBags[id] = {};
+            const bag = this.userBags[id];
+            return bag;
         }
     }
 
