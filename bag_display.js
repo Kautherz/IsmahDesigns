@@ -63,8 +63,8 @@ const renderBag = async function(){
                                 <div class="col-md-2 col-sm-6">
                                     <button class="delete" onclick="SomeDeleteRowFunction(this, '${keys[i]}')">Delete</button>
                                 </div>
-                            </div>
-                            <hr>`;
+                                <hr>
+                            </div>`;
             i++;
         }
         row_string +=   `</div>        
