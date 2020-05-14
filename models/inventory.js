@@ -1,19 +1,20 @@
 class Inventory{
     constructor(){
-        this.products = {"123456": {name: "Item 1", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/arbaeen_design2.png", "images/arbaeen_design1.png"], price: 9999.99},
-                    "777777": {name: "Item 2", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 999.99},
-                    "333333": {name: "Item 3", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 99.99},
-                    "444444": {name: "Item 4", type: "Longsleeve T-Shirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 999.90},
-                    "999999": {name: "Item 5", type: "T-Shirts", gender: "Kids", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 99990.99},
-                    "101010": {name: "Item 6", type: "Hoodies and Sweatshirts", gender: "Kids", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 90.99},
-                    "342343": {name: "Item 7", type: "T-Shirts", gender: "Men", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 99.99},
-                    "686532": {name: "Item 8", type: "Hoodies and Sweatshirts", gender: "Women", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 990.99},
-                    "121002": {name: "Item 9", type: "Longsleeve T-Shirts", gender: "Women", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 9999.89},
-                    "111111": {name: "Item 10", type: "Hoodies and Sweatshirts", gender: "Women", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 9999.69},
-                    "122222": {name: "Item 11", type: "T-Shirts", gender: "Women", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 995.99},
-                    "143534": {name: "Item 12", type: "Hoodies and Sweatshirts", gender: "Men", pictures: ["images/muharram_4front.png", "images/muharram_4back.png"], price: 9299.99},
-                    "134323": {name: "Item 13", type: "Hoodies and Sweatshirts", gender: "Kids", pictures: ["images/muharram_5front.png", "images/muharram_5back.png"], price: 909.99}};
+        this.products = {"123456": setItem("Item 1", "Hoodies and Sweatshirts", "Men", 10.99, "images/arbaeen_design2.png", "images/arbaeen_design1.png"),
+                    "333333": setItem("Item 3", "Hoodies and Sweatshirts", "Kids", 25.99, "images/muharram_5front.png", "images/muharram_5back.png"),
+                    "444444": setItem("Item 4", "Hoodies and Sweatshirts", "Kids", 30.99, "images/muharram_4front.png", "images/muharram_4back.png"),
+                    "999999": setItem("Item 5", "Longsleeve T-Shirts", "Men", 30.99, "images/muharram_5front.png", "images/muharram_5back.png"),
+                    "101010": setItem("Item 6", "Longsleeve T-Shirts", "Women", 50.99, "images/muharram_4front.png", "images/muharram_4back.png"),
+                    "342343": setItem("Item 7", "T-Shirts", "Men", 45.99, "images/muharram_5front.png", "images/muharram_5back.png"),
+                    "686532": setItem("Item 8", "Hoodies and Sweatshirts", "Men", 75.99, "images/muharram_4front.png", "images/muharram_4back.png"),
+                    "121002": setItem("Item 9", "Longsleeve T-Shirts", "Men", 11.99, "images/muharram_5front.png", "images/muharram_5back.png"),
+                    "111111": setItem("Item 10", "Hoodies and Sweatshirts", "Women", 13.99, "images/muharram_4front.png", "images/muharram_4back.png"),
+                    "122222": setItem("Item 11", "Hoodies and Sweatshirts", "Women", 12.99, "images/muharram_5front.png", "images/muharram_5back.png"),
+                    "143534": setItem("Item 12", "T-Shirts", "Women", 100.99, "images/muharram_4front.png", "images/muharram_4back.png"),
+                    "134323": setItem("Item 13", "Hoodies and Sweatshirts", "Kids", 45.99, "images/muharram_5front.png", "images/muharram_5back.png")};
+
     }
+
 
     get(id){
         if(this.products[id]){
@@ -59,4 +60,15 @@ class Inventory{
         }
     }
 }
+
+function setItem(name, type, gender, price, ...pictures){
+    const item = {};
+    item.name = name;
+    item.type = type;
+    item.gender = gender;
+    item.price = price; 
+    item.pictures = pictures;
+    return item;
+}
+
 module.exports = new Inventory();
