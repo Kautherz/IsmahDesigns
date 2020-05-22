@@ -86,6 +86,13 @@ class Controllers{
            response.json({'success': false});
         }
     }
+
+    getTotal(request, response){
+        const sessionID = request.session.id;
+        const bag = userBags.get(sessionID);
+        const total = inventory.getTotalPrice(bag);
+        response.json(total);
+    }
 }
 
 module.exports = new Controllers();
