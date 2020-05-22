@@ -59,6 +59,20 @@ class Inventory{
             return data;
         }
     }
+
+    getTotalPrice(bag){
+        const keys = Object.keys(bag);
+        const num_items = Object.keys(bag).length;
+        var total = 0;
+        for(var i = 0; i < num_items; i++){
+            let[id, size] = keys[i].split('-');
+            var price = this.products[id].price;
+            var quantity = bag[keys[i]];
+            total = parseFloat(total) + (parseFloat(price) * parseFloat(quantity));
+        }
+        total = (Math.round(total * 100) / 100).toFixed(2);
+        return total;
+    }
 }
 
 function setItem(name, type, gender, price, ...pictures){
