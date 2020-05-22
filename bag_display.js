@@ -37,6 +37,10 @@ const renderBag = async function(){
         var i = 0
         while(i < num_products){
             let[id, size] = keys[i].split('-');
+            var price = bag_info[keys[i]].price;
+            var quantity = bag_info[keys[i]].quantity;
+            var priceWithQuantity = (parseFloat(price) * parseFloat(quantity));
+            priceWithQuantity = (Math.round(priceWithQuantity * 100) / 100).toFixed(2);
             row_string += `<div class="row">
                                 <div class="col-md-4 col-sm-6">
                                     <div class="product-grid2">
@@ -51,23 +55,27 @@ const renderBag = async function(){
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-sm-6">
-                                    <h3 class="centered">${bag_info[keys[i]].size}</h3>                            
+                                <div class="col-md-2 col-sm-6" id="size${i}">
+                                    <h3 class="centered" id="userSize${i}">${bag_info[keys[i]].size}</h3>                            
+                                </div>
+                                <div class="col-md-2 col-sm-6" id="quantity${i}">
+                                    <h3 class="centered" id="userQuantity${i}">${bag_info[keys[i]].quantity}</h3>
                                 </div>
                                 <div class="col-md-2 col-sm-6">
-                                    <h3 class="centered">${bag_info[keys[i]].quantity}</h3>
+                                    <h3 class="centered">Price: $${priceWithQuantity}</h3>
                                 </div>
                                 <div class="col-md-2 col-sm-6">
-                                    <h3 class="centered">Price: $${bag_info[keys[i]].price}</h3>
+                                    <button id = "edit-save${i}" onclick="toggleButtonText('${keys[i]}', '${i}')">Edit</button>
+                                    <button class="delete" onclick="deleteRow(this, '${keys[i]}')">Delete</button>
                                 </div>
-                                <div class="col-md-2 col-sm-6">
-                                    <button class="delete" onclick="SomeDeleteRowFunction(this, '${keys[i]}')">Delete</button>
-                                </div>
-                                <hr>
-                            </div>`;
+                            </div>
+                            <hr>`;
             i++;
         }
-        row_string +=   `</div>        
+        response = await fetch(`http://localhost:3000/total`, {credentials: "include"});
+        const total = await response.json();
+        row_string +=   `<h2>Total Price: $${total}+Tax</h2>
+                    </div>        
                 </div>
             </li>
             </ul>
@@ -95,10 +103,6 @@ const renderBag = async function(){
     }
 }
 
-function SomeDeleteRowFunction(o, uniqueID) {
-    deleteRow(o, uniqueID);
-}
-
 const deleteRow = async function(o, uniqueID){
     const options = {
         method: 'POST',
@@ -113,6 +117,98 @@ const deleteRow = async function(o, uniqueID){
     location.reload();
 }
 
+
+function editItem(uniqueID, i) {
+    var sid = "size" + i; 
+    var qid = "quantity" + i; 
+    var quantity = document.getElementById(qid);
+    const q = document.getElementById("userQuantity" + i).innerText
+    const s = document.getElementById("userSize" + i).innerText
+
+    var quantity_string = `<select id="userQuantity${i}" class="form-control centered">`;
+    for(var j = 1; j < 11; j++){
+        if(q == j){
+            quantity_string += `<option selected = "selected" value="${j}">${j}</option>`;
+            continue;
+        }
+        quantity_string += `<option value="${j}">${j}</option>`;
+    }
+    quantity_string += `</select>`
+    quantity.innerHTML = quantity_string;
+
+    var size = document.getElementById(sid);
+    var size_string = `<select id="userSize${i}" class="form-control centered">`;
+    const sizes = ["Small", "Medium", "Large"];
+    for(var k = 0; k < sizes.length; k++){
+        if(s == sizes[k]){
+            size_string += `<option selected = "selected" value="${sizes[k]}">${sizes[k]}</option>`;
+            continue;
+        }
+        size_string += `<option value="${sizes[k]}">${sizes[k]}</option>`;
+    }
+    size_string += `</select>`;
+    size.innerHTML = size_string;
+}
+
+const saveItem = async function(uniqueID, i){
+    quantity = document.getElementById("userQuantity" + i).value
+    size = document.getElementById("userSize" + i).value
+    let[product_id, old_size] = uniqueID.split('-');
+    if(old_size == product_id){
+        //only add to bag
+        var data = {productID: product_id, size: size, quantity: quantity};
+        var options = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            credentials: "include",
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
+        };
+        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
+        await fetch('http://localhost:3000/addProduct', options);
+    }
+    else
+    {
+        //delete previous uniqueid from bag, then add new unique id to bag with its new quantity
+        var options = {
+            method: 'POST',
+            body: JSON.stringify({data: uniqueID}),
+            credentials: "include",
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
+        };
+        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
+        await fetch('http://localhost:3000/deleteProduct', options);
+
+        var data = {productID: product_id, size: size, quantity: quantity};
+        var options = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            credentials: "include",
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
+        };
+        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
+        await fetch('http://localhost:3000/addProduct', options);
+    }
+    location.reload();
+}
+
+function toggleButtonText(uniqueID, i) {
+    var bid = "edit-save" + i;
+    var button = document.getElementById(bid);
+    if(button.innerText == "Edit"){
+        editItem(uniqueID, i);
+        button.innerText = "Save";
+    }
+    else{
+        saveItem(uniqueID, i);
+        button.innerText = "Edit";
+        //button.addEventListener('click', () => saveItem());
+        //location.reload();
+    }
+}
+
+function initControllers1(){
+    const submitButton = document.getElementById('edit-save');
+    submitButton.addEventListener('click', () => saveItem());
+}
+
 renderBag();
-
-
