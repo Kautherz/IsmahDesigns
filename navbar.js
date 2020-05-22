@@ -1,7 +1,7 @@
 const renderNavbar = async function(){    
     document.getElementById("section-home").innerHTML = `<div id="section-home">
     <nav id = "myNavbar" class = 'navbar fixed-top navbar-expand-lg navbar-light bg-light'>
-        <a class="navbar-brand" href="#"> <img src="images/image1.png" width="100" height="50"/> </a>
+        <a class="navbar-brand" href="index.html"> <img src="images/image1.png" width="100" height="50"/> </a>
 
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target="#navbarSupportedContent">
             <span class='navbar-toggler-icon'></span>
@@ -88,5 +88,14 @@ const renderNavbar = async function(){
         </div>
     </nav>
     </div>`
+
+    footer = document.getElementById("footer");
+    if(footer){
+        footer.innerHTML = `<footer class="bg-dark">
+                            <div class="container">
+                                <p class="text-center" style="color:#FFFFFF;">Copyright &copy; 2020 Kauther Zeini and Ali Zaini</p>
+                            </div>
+                        </footer>`;
+    }
 }
 renderNavbar();
