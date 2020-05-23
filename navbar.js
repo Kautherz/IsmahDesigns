@@ -74,16 +74,15 @@ const renderNavbar = async function(){
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class = 'nav-link text-black' href="bag.html">Bag <i class="fas fa-shopping-bag"></i> 
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-black" href="#section-about">About Us</a>
                 </li>
                 <li>
                     <a class = 'nav-link text-black' href="index.html#section-contact">Contact Us </a> 
                 </li>
-
+                <li class="nav-item">
+                    <a class = 'nav-link text-black' href="bag.html">Bag <i class="fas fa-shopping-bag"></i> 
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
