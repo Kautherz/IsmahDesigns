@@ -15,9 +15,8 @@ const clickEvent = async function(product_id){
         credentials: "include",
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
     };
-    //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
-    await fetch('http://localhost:3000/addProduct', options);
+    await fetch('https://rocky-refuge-39209.herokuapp.com/addProduct', options);
+    //await fetch('http://localhost:3000/addProduct', options);
+    alert("Your item has been added to your bag.")
+    
 }
-
-
-initControllers();

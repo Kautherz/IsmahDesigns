@@ -2,8 +2,8 @@ const renderProductPage = async function(){
     initControllers();
     const urlparams = new URLSearchParams(window.location.search);
     const product_id = urlparams.get("product_id");
-    const response = await fetch(`http://localhost:3000/product?productID=${product_id}`);
-    //const response = await fetch(`https://rocky-refuge-39209.herokuapp.com/product?productID=${product_id}`);
+    //const response = await fetch(`http://localhost:3000/product?productID=${product_id}`);
+    const response = await fetch(`https://rocky-refuge-39209.herokuapp.com/product?productID=${product_id}`);
     const product_data = await response.json();
     if(product_data.success){
         document.getElementById("product-name").innerHTML = product_data.name;

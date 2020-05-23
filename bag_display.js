@@ -1,7 +1,7 @@
 const renderBag = async function(){
     var row_string = "";
-    //var response = await fetch(`https://rocky-refuge-39209.herokuapp.com/getBag`, {credentials: "include"});
-    var response = await fetch(`http://localhost:3000/getBag`, {credentials: "include"});
+    var response = await fetch(`https://rocky-refuge-39209.herokuapp.com/getBag`, {credentials: "include"});
+    //var response = await fetch(`http://localhost:3000/getBag`, {credentials: "include"});
     const bag = await response.json();
     var check = Object.keys(bag).length;
     if(check > 0)
@@ -11,8 +11,8 @@ const renderBag = async function(){
         var bag_info = {};
         for(var j = 0;j< num_products; j++){
             let[id, size] = keys[j].split('-');
-            //response = await fetch(`https://rocky-refuge-39209.herokuapp.com/product?productID=${id}`, {credentials: "include"});
-            response = await fetch(`http://localhost:3000/product?productID=${id}`, {credentials: "include"});
+            response = await fetch(`https://rocky-refuge-39209.herokuapp.com/product?productID=${id}`, {credentials: "include"});
+            //response = await fetch(`http://localhost:3000/product?productID=${id}`, {credentials: "include"});
             var product = await response.json();
             var price = product.price;
             var name = product.name;
@@ -72,7 +72,8 @@ const renderBag = async function(){
                             <hr>`;
             i++;
         }
-        response = await fetch(`http://localhost:3000/total`, {credentials: "include"});
+        response = await fetch(`https://rocky-refuge-39209.herokuapp.com/total`, {credentials: "include"});
+        //response = await fetch(`http://localhost:3000/total`, {credentials: "include"});
         const total = await response.json();
         row_string +=   `<h2>Total Price: $${total}+Tax</h2>
                     </div>        
@@ -99,6 +100,8 @@ const renderBag = async function(){
             </li>
             </ul>
         </div>`;
+
+        row_string += ``
         document.getElementById('bag_rows').innerHTML = row_string;
     }
 }
@@ -110,8 +113,8 @@ const deleteRow = async function(o, uniqueID){
         credentials: "include",
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
     };
-    //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
-    await fetch('http://localhost:3000/deleteProduct', options);
+    await fetch('https://rocky-refuge-39209.herokuapp.com/deleteProduct', options);
+    //await fetch('http://localhost:3000/deleteProduct', options);
     var p=o.parentNode.parentNode;
     p.parentNode.removeChild(p);
     location.reload();
@@ -163,8 +166,8 @@ const saveItem = async function(uniqueID, i){
             credentials: "include",
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
         };
-        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
-        await fetch('http://localhost:3000/addProduct', options);
+        await fetch('https://rocky-refuge-39209.herokuapp.com/addProduct', options);
+        //await fetch('http://localhost:3000/addProduct', options);
     }
     else
     {
@@ -175,8 +178,8 @@ const saveItem = async function(uniqueID, i){
             credentials: "include",
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
         };
-        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
-        await fetch('http://localhost:3000/deleteProduct', options);
+        await fetch('https://rocky-refuge-39209.herokuapp.com/deleteProduct', options);
+        //await fetch('http://localhost:3000/deleteProduct', options);
 
         var data = {productID: product_id, size: size, quantity: quantity};
         var options = {
@@ -185,8 +188,8 @@ const saveItem = async function(uniqueID, i){
             credentials: "include",
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json'}
         };
-        //await fetch('https://rocky-refuge-39209.herokuapp.com', options);
-        await fetch('http://localhost:3000/addProduct', options);
+        await fetch('https://rocky-refuge-39209.herokuapp.com/addProduct', options);
+        //await fetch('http://localhost:3000/addProduct', options);
     }
     location.reload();
 }
@@ -201,14 +204,6 @@ function toggleButtonText(uniqueID, i) {
     else{
         saveItem(uniqueID, i);
         button.innerText = "Edit";
-        //button.addEventListener('click', () => saveItem());
-        //location.reload();
     }
 }
-
-function initControllers1(){
-    const submitButton = document.getElementById('edit-save');
-    submitButton.addEventListener('click', () => saveItem());
-}
-
 renderBag();
