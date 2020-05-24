@@ -8,11 +8,12 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 function setupApp(){
+    //app.set('trust proxy', 1)
 	app.use(cors({credentials: true, origin: true}));
    // app.use(localHostHandler);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:false}));
-    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true };
+    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true, cookie:{secure: true}};
     app.use(session(sessionConfig) );
     app.use('/', routes);  
 }
