@@ -1,7 +1,8 @@
+
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const routes = require('./routes/game.routes');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -25,4 +26,3 @@ function localHostHandler(request, response, next){
     response.header('Access-Control-Allow-Origin', '*');
     next();
 }
-
