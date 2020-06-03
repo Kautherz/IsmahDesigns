@@ -23,9 +23,11 @@ const renderProductPage = async function(){
         <li class="breadcrumb-item bc"><a href="shop.html?gender=${product_data.gender}&type=${typeString}" id="product-type">${product_data.type}</a></li>
         <li class="breadcrumb-item active_breadcrumb", id="product-title">${product_data.name}</li>
       </ol>`;
+      $('#loading').fadeOut();
     }
     else{
         window.location.replace("error.html");
+        $('#loading').fadeOut();
     }
 }
 renderProductPage();

@@ -39,7 +39,7 @@ const renderProducts = async function(){
             <div class="product-grid2">
                 <div class="product-image2">
                     <a href="item.html?product_id=${keys[item]}">
-                        <img class="pic-1" src="${products[keys[item]].pictures[0]}">
+                        <img class="pic-1" id="pic-1" src="${products[keys[item]].pictures[0]}">
                         <img class="pic-2" src="${products[keys[item]].pictures[1]}">
                     </a>
                 </div>
@@ -58,7 +58,7 @@ const renderProducts = async function(){
         rows--;
     }
     document.getElementById("test").innerHTML = row_string;
-
+    $('#loading').fadeOut();
 }
 renderProducts();
 

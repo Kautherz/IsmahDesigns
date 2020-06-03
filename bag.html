@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Ismah Designs</title>
-
+        <link href='loading.css' rel="stylesheet" type = "text/css">
         <link href='bagstyle.css' rel="stylesheet" type = "text/css">
         <link href='styling.css' rel="stylesheet" type = "text/css">
         <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> 
@@ -21,6 +21,7 @@
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
         <script src="https://kit.fontawesome.com/fed7a2e5ea.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       
     
         <style>
@@ -45,10 +46,22 @@
     <body>
 
         <div id="section-home"></div>
-       
 
+        <div class="wrap cf" id="bag_rows">
+        </div>
 
-        <div class="wrap cf" id="bag_rows"></div>
+        <div class="loader-wrapper" id="loading">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+
+        <!-- <script>
+            console.log("Loading")
+            $(window).on('load', function(){
+              $('#loading').fadeOut();
+            });
+            console.log("Done")
+        </script> -->
+
 
     <footer class="bg-dark" id="footer"></footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

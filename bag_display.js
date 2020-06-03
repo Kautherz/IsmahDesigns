@@ -26,7 +26,7 @@ const renderBag = async function(){
         row_string += `<h1 class="projTitle">Shopping Bag</h1>
         <div class="heading cf">
             <h1>My Cart</h1>
-            <a href="shop_menu.html" class="continueShopping">Continue Shopping</a>
+            <a href="shop_menu.html" class="continueShopping" id = "continue">Continue Shopping</a>
         </div>
         <div class="cart">
             <ul class="cartWrap">
@@ -82,6 +82,7 @@ const renderBag = async function(){
             </ul>
         </div>`;
         document.getElementById('bag_rows').innerHTML = row_string;
+        $('#loading').fadeOut();
     }
     else{
         row_string += `<h1 class="projTitle">Shopping Bag</h1>
@@ -100,9 +101,8 @@ const renderBag = async function(){
             </li>
             </ul>
         </div>`;
-
-        row_string += ``
         document.getElementById('bag_rows').innerHTML = row_string;
+        $('#loading').fadeOut();
     }
 }
 
@@ -115,9 +115,9 @@ const deleteRow = async function(o, uniqueID){
     };
     await fetch('https://rocky-refuge-39209.herokuapp.com/deleteProduct', options);
     //await fetch('http://localhost:3000/deleteProduct', options);
-    var p=o.parentNode.parentNode;
-    p.parentNode.removeChild(p);
     location.reload();
+    // var p=o.parentNode.parentNode;
+    // p.parentNode.removeChild(p);
 }
 
 
