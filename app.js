@@ -1,4 +1,3 @@
-
 const cors = require('cors');
 const express = require('express');
 const app = express();
@@ -13,7 +12,7 @@ function setupApp(){
    // app.use(localHostHandler);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:false}));
-    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true, cookie:{secure: true, SameSite: 'None' }};
+    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true, cookie:{secure: true, sameSite: 'None'}};
     app.use(session(sessionConfig) );
     app.use('/', routes);  
 }

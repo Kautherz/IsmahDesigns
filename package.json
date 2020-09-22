@@ -13,5 +13,8 @@
         "express-session": "*",
         "express-flash": "*",
         "cors": "*"
+    },
+    "engines": {
+        "node": "12.18.2"
     }
 }
