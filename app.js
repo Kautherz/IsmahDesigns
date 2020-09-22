@@ -13,7 +13,7 @@ function setupApp(){
    // app.use(localHostHandler);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:false}));
-    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true, cookie:{secure: true, sameSite: 'none'}};
+    const sessionConfig = { secret:'secret-word', resave:false, saveUninitialized:true, cookie:{secure: true, sameSite: 'None'}};
     app.use(session(sessionConfig) );
     app.use('/', routes);  
 }
