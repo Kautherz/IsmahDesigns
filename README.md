@@ -18,10 +18,10 @@ Ismah Designs is a clothing brand that will be going live in the near future.
 - A checkout API has not been implemented within the website
 - The catalogue has been hard-coded into the site, all with their unique IDs. This makes it difficult to update the catalogue easily.
 
-#Future Improvements
+# Future Improvements
 - Implementation of the Paypal Business API
 - Implementation of MongoDB to allow for the site to be updated without altering the code in place.
 - Recreating the site using REACT, creating much cleaner and more easily understandable source code
 
-#Other
+# Other
 This project was created by myself and Kauther Zeini for our final project in our Web Applications Course. Although it was done for our coursework, we fully intend to have the site go live in the near future. The owner of the clothing brand, a close friend of ours, had reached out expressing his frustrations of hosting the site on Shopify due to their extremely high monthly price of hosting the site. We wanted to challenge ourselves and attempt to host the site ourselves and pick up new skills in the process.
