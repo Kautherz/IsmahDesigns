@@ -11,6 +11,7 @@ Ismah Designs is a clothing brand that will be going live in the near future.
 - The project was created with only raw HTML, CSS, and JavaScript.
 - NodeJS was used to facilitate the routing on the backend.
 - Heroku is being used to host the GET requests of the items in the shop (i.e. requesting Men's Hoodies & Sweatshirts).
+- Heroku is also hosting our POST requests that will update the user's shopping bag when an item is added, edited, or deleted.
 - Shopping bag is linked to the session ID of the user through ExpressJS.
 - A 'Contact Us' section directly linked to a Google Forms of the owner
 
