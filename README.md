@@ -1,7 +1,6 @@
 # Ismah Designs: A Full-Stack Shopping Site :handbag:
 
-Ismah Designs is a clothing brand that will be going live in the near future. It is, for the time being, hosted at azaini.me/4208FinalProject.
-
+Ismah Designs is a clothing brand that will be going live in the near future. Whle changes are being done, it is currenlty being hosted [here](azaini.me/4208FinalProject)
 # Features
 - A working shopping bag that saves your items even after you close the browser, all without a login
 - The ability to update your bag at checkout with changes such as editing the quantity and size, or even deleting the item altogether.
