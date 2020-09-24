@@ -1,6 +1,6 @@
 # Ismah Designs
 
-**Ismah Designs** is a website for Ismah Deigns clothing brand
+**Ismah Designs** is a website for the Ismah Deigns clothing brand
 
 ## Link 
 
