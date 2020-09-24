@@ -12,7 +12,7 @@ https://kautherz.github.io/4208FinalProject/
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented portfolio:
+Here's a walkthrough of the Ismah Designs site:
 
 <img src='HERE' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
