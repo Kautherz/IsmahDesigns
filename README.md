@@ -4,7 +4,7 @@
 
 ## Functionality
 
-[x] A working shopping bag that saves your items 
+[x] A working shopping bag that saves your items
 [x] Ability to update bag at checkout through editing the quantity, size, or deleting items.
 [x] A fully functional 'Contact Us' section to reach out to the owners.
 
