@@ -1,25 +1,16 @@
-# Ismah Designs
+# Ismah Designs: Shopping Site 
 
-**Ismah Designs** is a website for the Ismah Designs clothing brand
+**Ismah Designs** is a website for the Ismah Designs clothing brand.
 
 ## Link 
 
 https://kautherz.github.io/4208FinalProject/
 
-
 ## Functionality
 
+## Note
 
-## Video Walkthrough
-
-Here's a walkthrough of the Ismah Designs site:
-
-<img src='HERE' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [Recordit](https://recordit.co).
-
-
-
+This website was created by myself and Ali Zaini for our Web Application Development Course. We are currently working on fully completing this site so that it can be used in an official capacity. 
 
 ## License
 
