@@ -1,10 +1,6 @@
 # Ismah Designs: Shopping Site 
 
-**Ismah Designs** is a website for the Ismah Designs clothing brand.
-
-## Link 
-
-https://kautherz.github.io/4208FinalProject/
+**Ismah Designs** is a website for the Ismah Designs clothing brand currently found here: https://kautherz.github.io/4208FinalProject/
 
 ## Functionality
 
