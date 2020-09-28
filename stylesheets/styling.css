@@ -1,0 +1,645 @@
+body,
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+.maintitle {
+    font-family: "Italianno", cursive;
+    font-size: 300%;
+    text-align: center;
+}
+
+.centered {
+    margin: 0;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.subtitle {
+    font-family: "Italianno", cursive;
+    font-size: 150%;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.centerText {
+    position: relative;
+    font-size: 2.3rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Lato", sans-serif;
+}
+
+.paddedcontainer {
+    height: 50px;
+}
+
+.bg-medgrey {
+    background-color: #a8a8a8;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-red {
+    color: #4f0804;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1,
+.bgimg-2 {
+    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url(../images/header3.jpg);
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url(../images/imam_ali_shrine.jpg);
+    min-height: 400px;
+}
+
+.w3-wide {
+    letter-spacing: 10px;
+}
+.w3-hover-opacity {
+    cursor: pointer;
+}
+
+/* Turn off parallax scrolling for tablets and mobiles */
+@media only screen and (max-width: 1024px) {
+    .bgimg-1,
+    .bgimg-2 {
+        background-attachment: scroll;
+    }
+}
+
+/* Clearfix Hack */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+section#contact {
+    background: #fff;
+    color: #000;
+}
+
+#contact .section-heading {
+    margin: 0 0 2em;
+}
+
+#contact #message {
+    min-height: 132px;
+    height: auto;
+}
+
+#profile {
+    vertical-align: middle;
+}
+
+.middle {
+    position: relative;
+    font-size: 2.3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-class {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: #f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #00000070;
+    color: #0d0d0d;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-class i {
+    line-height: 90px;
+    font-size: 26px;
+    transition: 0.2s linear;
+}
+
+.btn-class:hover i {
+    transform: scale(1.3);
+    color: #f1f1f1;
+}
+
+.btn-class::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #4f0804;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+}
+
+.btn-class:hover::before {
+    animation: aaa 0.7s 1;
+    top: -10%;
+    left: -10%;
+}
+
+@keyframes aaa {
+    0% {
+        left: -110%;
+        top: 90%;
+    }
+    50% {
+        left: 10%;
+        top: -30%;
+    }
+    100% {
+        top: -10%;
+        left: -10%;
+    }
+}
+
+ul {
+    list-style-type: upper-roman;
+    padding: 10px;
+}
+
+#overview {
+    text-align: center;
+    padding-top: 1em;
+}
+
+hr {
+    border: 3px solid #999;
+    border-radius: 5px;
+}
+
+.thumbnail {
+    float: left;
+    border: 1 px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+#my-name {
+    text-shadow: 2px 2px #ffffff;
+    color: magenta;
+    font-size: x-large;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+#navbar {
+    display: block;
+    text-align: right;
+    position: fixed;
+    top: -1em;
+    width: 100%;
+    height: 100px;
+}
+
+.nav {
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+div ul li a,
+div ul li a:after,
+div ul li a:before {
+    transition: all 0.5s;
+}
+div ul li a:hover {
+    color: #555;
+}
+
+div.stroke ul li a,
+div.fill ul li a {
+    position: relative;
+}
+div.stroke ul li a:after,
+div.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: black;
+    height: 1px;
+}
+div.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+div ul {
+    list-style: none;
+    text-align: center;
+}
+
+.dropdown-menu {
+    margin-top: 0;
+}
+.dropdown-menu .dropdown-toggle::after {
+    vertical-align: middle;
+    border-left: 4px solid;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+}
+.dropdown-menu .dropdown .dropdown-menu {
+    left: 100%;
+    top: 0%;
+    margin: 0 20px;
+    border-width: 0;
+}
+.dropdown-menu .dropdown .dropdown-menu.left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu > li a:hover,
+.dropdown-menu > li.show {
+    color: #555;
+}
+.dropdown-menu > li.show > a {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .dropdown-menu .dropdown .dropdown-menu {
+        margin: 0;
+        border-width: 1px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+.mySlides {
+    display: none;
+}
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* GRID STYLING */
+body {
+    padding-top: 77px;
+}
+
+.h3 {
+    text-align: center;
+    margin: 1em;
+    text-transform: capitalize;
+    font-size: 1.7em;
+}
+.demo {
+    padding: 45px 0;
+}
+.product-grid2 {
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+}
+.product-grid2 .product-image2 {
+    overflow: hidden;
+    position: relative;
+}
+.product-grid2 .product-image2 a {
+    display: block;
+}
+.product-grid2 .product-image2 img {
+    width: 100%;
+    height: auto;
+}
+.product-image2 .pic-1 {
+    opacity: 1;
+    transition: all 0.5s;
+}
+.product-grid2:hover .product-image2 .pic-1 {
+    opacity: 0;
+}
+.product-image2 .pic-2 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+.product-grid2:hover .product-image2 .pic-2 {
+    opacity: 1;
+}
+.product-grid2 .social {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 25px;
+    z-index: 1;
+}
+
+.product-grid2 .social li {
+    margin: 0 0 10px;
+    display: block;
+    transform: translateX(100px);
+    transition: all 0.5s;
+}
+.product-grid2:hover .social li {
+    transform: translateX(0);
+}
+.product-grid2:hover .social li:nth-child(2) {
+    transition-delay: 0.15s;
+}
+.product-grid2:hover .social li:nth-child(3) {
+    transition-delay: 0.25s;
+}
+.product-grid2 .social li a {
+    color: #505050;
+    background-color: #fff;
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.product-grid2 .social li a:hover {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.product-grid2 .social li a:after,
+.product-grid2 .social li a:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 0 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px;
+}
+.product-grid2 .social li a:after {
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1;
+}
+.product-grid2 .social li a:hover:after,
+.product-grid2 .social li a:hover:before {
+    opacity: 1;
+}
+.product-grid2 .add-to-cart {
+    color: #fff;
+    background-color: #404040;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: all 0.3s;
+}
+.product-grid2 .add-to-cart:hover {
+    background-color: #3498db;
+    text-decoration: none;
+}
+.product-grid2:hover .add-to-cart {
+    bottom: 0;
+}
+.product-grid2 .product-new-label {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 17px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.3s;
+}
+.product-grid2:hover .product-new-label {
+    opacity: 0;
+}
+.product-grid2 .product-content {
+    padding: 20px 10px;
+    text-align: center;
+}
+.product-grid2 .title {
+    font-size: 17px;
+    margin: 0 0 7px;
+}
+.product-grid2 .title a {
+    color: #303030;
+}
+.product-grid2 .title a:hover {
+    color: #3498db;
+}
+.product-grid2 .price {
+    color: #303030;
+    font-size: 15px;
+}
+@media screen and (max-width: 990px) {
+    .product-grid2 {
+        margin-bottom: 30px;
+    }
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    list-style: none;
+}
+.breadcrumb-list li {
+    font-size: 1rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    display: inline-block;
+    padding: 0 0.5rem;
+    color: #aaa;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+#active_breadcrumb {
+    color: grey;
+}
+
+#bc {
+    color: #aaa;
+}
