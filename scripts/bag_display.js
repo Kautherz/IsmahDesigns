@@ -66,8 +66,8 @@ const renderBag = async function () {
                                     <h3 class="centered">Price:</h3>
                                 </div>
                                 <div class="col-md-2 col-sm-6">
-                                    <button id = "edit-save${i}" onclick="toggleButtonText(${i})">Edit</button>
-                                    <button class="delete" onclick="deleteRow(${i})">Delete</button>
+                                    <button class="btn btn-xl btn-outline-dark text" id = "edit-save${i}" onclick="toggleButtonText(${i})">Edit</button>
+                                    <button class="btn btn-xl btn-outline-dark text" onclick="deleteRow(${i})">Delete</button>
                                     <h3 class="centered">$${(quantity * price).toFixed(2)}</h3>
                                 </div>
                             </div>
