@@ -1,6 +1,6 @@
 # Ismah Designs: Shopping Site:
 
-Ismah Designs is a clothing brand that will be going live in the near future. It can be currently found [here](https://kautherz.github.io/4208FinalProject/).
+Ismah Designs is a clothing brand that will be going live in the near future. It can be currently found [here](https://kautherz.github.io/IsmahDesigns/).
 # Features
 - [x] A working shopping bag that saves your items even after you close the browser, all without a login
 - [x] The ability to update your bag at checkout with changes such as editing the quantity and size, or even deleting the item altogether.
