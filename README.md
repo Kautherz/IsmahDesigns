@@ -1,4 +1,4 @@
-# Ismah Designs: Shopping Site:
+# Ismah Designs: Shopping Site
 
 Ismah Designs is a clothing brand that will be going live in the near future. It can be currently found [here](https://kautherz.github.io/IsmahDesigns/).
 # Features
